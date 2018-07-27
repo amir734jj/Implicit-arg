@@ -14,3 +14,11 @@ var callee = new DummyCallee()
 // Act, Assert
 Assert.Equal(caller.DummyProperty, callee.Foo());
 ```
+
+Then calle can use the instance(s):
+
+```csharp
+public string Foo() {
+    return GetCalleThis<DummyCaller>().DummyProperty;
+}
+```
